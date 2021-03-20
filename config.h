@@ -60,15 +60,16 @@ static const char unknown_str[] = "n/a";
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
+ *
  */
+/* for usleep */
 static const struct arg args[] = {
-	/* function format               argument */
-	/* { datetime, "%s",            "%F %T" }, */
-	{ cpu_perc,       "  %s%% | ",     NULL },
+    /* function format               argument */ 	/* { datetime, "%s",            "%F %T" }, */
+    { cpu_perc,       "  %s%% | ",     NULL },
     { run_command,    "%s | ",          "memory" },
-	{ kernel_release, " %s | ",        NULL },
-    { wifi_essid,     "直 %s | ",       "wlp9s0f3u2" },
+    { kernel_release, " %s | ",        NULL },
     { run_command,    "%s | ",          "volume" },
-	{ uptime,         " %s | ",        NULL },
-	{ datetime,       " %s ",          "%a %d %b %Y %X" }
+    { run_command,    "%s | ",          "cputemp" },
+    { uptime,         " %s | ",        NULL },
+    { datetime,       " %s ",          "%a %d %b %Y %X" }
 };
